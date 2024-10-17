@@ -1,0 +1,413 @@
+{
+	"info": {
+		"_postman_id": "e897dfd0-0aab-413c-a0d9-877da7e4ae1e",
+		"name": "task management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33368297"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "sign-up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"rodina\",\r\n    \"email\":\"rodinayassine21@gmail.com\",\r\n    \"password\":\"123456\",\r\n    \"role\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/sign-up",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign-in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\":\"rodinayassine21@gmail.com\",\r\n    \"password\":\"123456\"\r\n    \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/sign-in",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget-Password",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"rodinayassine21@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/forget-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"forget-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"rodinayassine21@gmail.com\",\r\n    \"password\":\"12345\",\r\n    \"code\":\"47786\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/reset-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tasks",
+			"item": [
+				{
+					"name": "Task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MGUzM2Q3ZjRjODE5ODY4NDRjNjM3ZiIsImVtYWlsIjoicm9kaW5heWFzc2luZTIxQGdtYWlsLmNvbSIsImlhdCI6MTcyODk4NDA0MSwiZXhwIjoxNzI4OTg3NjQxfQ.jJs3avJPjwDPZnG3ZkLzWFYjXVPYeVDlaVQpT0iN-Mc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"aaa\",\r\n    \"description\":\"aaaa\",\r\n    \"status\":\"Pending\",\r\n    \"priority\":\"Low\",\r\n    \"category\":\"aaaa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/task",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tasks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MGUzM2Q3ZjRjODE5ODY4NDRjNjM3ZiIsImVtYWlsIjoicm9kaW5heWFzc2luZTIxQGdtYWlsLmNvbSIsImlhdCI6MTcyODk4NDA0MSwiZXhwIjoxNzI4OTg3NjQxfQ.jJs3avJPjwDPZnG3ZkLzWFYjXVPYeVDlaVQpT0iN-Mc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/task?status=Pending",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"task"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "Pending"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-task",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MGUzM2Q3ZjRjODE5ODY4NDRjNjM3ZiIsImVtYWlsIjoicm9kaW5heWFzc2luZTIxQGdtYWlsLmNvbSIsImlhdCI6MTcyODk4NzY1NywiZXhwIjoxNzI4OTkxMjU3fQ.gSgnIsGhYkcN5WioVc8VY0X_gfFOyqkeCjgWL5_s_jw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"Done\",\r\n    \"priority\":\"High\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/task?id=670e34e6c3ef0379b943a853",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"task"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "670e34e6c3ef0379b943a853"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "task",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MGUzM2Q3ZjRjODE5ODY4NDRjNjM3ZiIsImVtYWlsIjoicm9kaW5heWFzc2luZTIxQGdtYWlsLmNvbSIsImlhdCI6MTcyODk4NzY1NywiZXhwIjoxNzI4OTkxMjU3fQ.gSgnIsGhYkcN5WioVc8VY0X_gfFOyqkeCjgWL5_s_jw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/task?id=670e45f25899fd79166a8e0e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"task"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "670e45f25899fd79166a8e0e"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "categories",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MGUzM2Q3ZjRjODE5ODY4NDRjNjM3ZiIsImVtYWlsIjoicm9kaW5heWFzc2luZTIxQGdtYWlsLmNvbSIsImlhdCI6MTcyODk5MjY5MCwiZXhwIjoxNzI4OTk2MjkwfQ.foMnsaf3TPLQwh2oWh8AOrpg0kxz0b2a5AiYsGzGudw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"task2\",\r\n    \"type\":\"personal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "category",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MGUzM2Q3ZjRjODE5ODY4NDRjNjM3ZiIsImVtYWlsIjoicm9kaW5heWFzc2luZTIxQGdtYWlsLmNvbSIsImlhdCI6MTcyODk5MjY5MCwiZXhwIjoxNzI4OTk2MjkwfQ.foMnsaf3TPLQwh2oWh8AOrpg0kxz0b2a5AiYsGzGudw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"task2\",\r\n    \"newTitle\":\"task4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "category",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MGUzM2Q3ZjRjODE5ODY4NDRjNjM3ZiIsImVtYWlsIjoicm9kaW5heWFzc2luZTIxQGdtYWlsLmNvbSIsImlhdCI6MTcyODk5MjY5MCwiZXhwIjoxNzI4OTk2MjkwfQ.foMnsaf3TPLQwh2oWh8AOrpg0kxz0b2a5AiYsGzGudw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"task4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MGUzM2Q3ZjRjODE5ODY4NDRjNjM3ZiIsImVtYWlsIjoicm9kaW5heWFzc2luZTIxQGdtYWlsLmNvbSIsImlhdCI6MTcyODk5MjY5MCwiZXhwIjoxNzI4OTk2MjkwfQ.foMnsaf3TPLQwh2oWh8AOrpg0kxz0b2a5AiYsGzGudw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
